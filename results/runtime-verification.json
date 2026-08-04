@@ -1,0 +1,277 @@
+{
+  "generatedAt": "2026-08-04T14:10:33.663Z",
+  "results": {
+    "turbopack": {
+      "runtime": {
+        "passed": true,
+        "route": {
+          "status": 200,
+          "recordCount": 1536,
+          "sentinel": "PUBLIC_CANARY_CONTEXT_SHARING_SENTINEL_v1"
+        },
+        "action": {
+          "status": 303,
+          "responseMode": "http-redirect",
+          "redirectContainsRecordCount": true,
+          "redirectContainsChecksum": true
+        }
+      },
+      "output": {
+        "metric": "sum of level-9 gzip bytes for each .next/server JavaScript file",
+        "total": {
+          "fileCount": 36,
+          "rawBytes": 1364994,
+          "gzipBytes": 528395,
+          "sentinelFileCount": 2
+        },
+        "categories": {
+          "serverChunks": {
+            "fileCount": 4,
+            "rawBytes": 523975,
+            "gzipBytes": 218434,
+            "sentinelFileCount": 1
+          },
+          "ssrChunks": {
+            "fileCount": 20,
+            "rawBytes": 822494,
+            "gzipBytes": 305564,
+            "sentinelFileCount": 1
+          },
+          "routeEntries": {
+            "fileCount": 2,
+            "rawBytes": 635,
+            "gzipBytes": 395,
+            "sentinelFileCount": 0
+          },
+          "pageEntries": {
+            "fileCount": 6,
+            "rawBytes": 16616,
+            "gzipBytes": 3192,
+            "sentinelFileCount": 0
+          },
+          "serverRuntime": {
+            "fileCount": 4,
+            "rawBytes": 1274,
+            "gzipBytes": 810,
+            "sentinelFileCount": 0
+          }
+        },
+        "sourceMapFileCount": 28,
+        "sourceEvidence": {
+          "parseFailureCount": 0,
+          "server": {
+            "sourceCount": 87,
+            "contentBytes": 875820,
+            "treatmentSources": [
+              "data/payload.generated.json",
+              "lib/pure-heavy.ts"
+            ]
+          },
+          "ssr": {
+            "sourceCount": 294,
+            "contentBytes": 2287712,
+            "treatmentSources": [
+              "data/payload.generated.json",
+              "lib/pure-heavy.ts"
+            ]
+          },
+          "overallOverlap": {
+            "serverSourceCount": 87,
+            "ssrSourceCount": 294,
+            "sharedPathCount": 76,
+            "identicalContentCount": 76,
+            "sourceOverlapRatio": 0.8735632183908046,
+            "contentIdentityRatio": 1,
+            "identicalContentBytes": 837538,
+            "contentByteOverlapRatio": 0.9562901052727729,
+            "sharedPaths": [
+              "data/payload.generated.json",
+              "lib/light.ts",
+              "lib/pure-heavy.ts",
+              "node_modules/next/dist/esm/server/lib/trace/span-store.js",
+              "node_modules/next/dist/esm/shared/lib/utils/reflect-utils.js",
+              "node_modules/next/dist/esm/server/app-render/async-local-storage.js",
+              "node_modules/next/dist/esm/server/app-render/dynamic-rendering.js",
+              "node_modules/next/dist/esm/client/components/hooks-server-context.js",
+              "node_modules/next/dist/esm/client/components/static-generation-bailout.js",
+              "node_modules/next/dist/esm/server/lib/clone-response.js",
+              "node_modules/next/dist/esm/server/lib/lru-cache.js",
+              "node_modules/next/dist/esm/lib/picocolors.js",
+              "node_modules/next/dist/esm/shared/lib/i18n/normalize-locale-path.js",
+              "node_modules/next/dist/esm/server/web/spec-extension/cookies.js",
+              "node_modules/next/dist/esm/server/client-component-renderer-logger.js",
+              "node_modules/next/dist/esm/server/lib/encode-cache-tag.js",
+              "node_modules/next/dist/esm/shared/lib/request-insights.js",
+              "node_modules/next/dist/esm/shared/lib/i18n/detect-domain-locale.js",
+              "node_modules/next/dist/esm/server/web/error.js",
+              "node_modules/next/dist/esm/shared/lib/promise-with-resolvers.js",
+              "node_modules/next/dist/esm/lib/framework/boundary-constants.js",
+              "node_modules/next/dist/esm/server/app-render/instant-validation/boundary-constants.js",
+              "node_modules/next/dist/esm/shared/lib/segment.js",
+              "node_modules/next/dist/esm/shared/lib/server-reference-info.js",
+              "node_modules/next/dist/esm/lib/constants.js",
+              "node_modules/next/dist/esm/client/components/redirect-status-code.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/cache-busting-search-param.js",
+              "node_modules/next/dist/esm/server/lib/trace/request-insights-identity.js",
+              "node_modules/next/dist/esm/server/lib/cache-control.js",
+              "node_modules/next/dist/esm/server/lib/trace/tracer.js",
+              "node_modules/next/dist/esm/server/dynamic-rendering-utils.js",
+              "node_modules/next/dist/esm/server/lib/trace/request-insights.js",
+              "node_modules/next/dist/esm/server/app-render/staged-rendering.js",
+              "node_modules/next/dist/esm/server/base-http/index.js",
+              "node_modules/next/dist/esm/build/output/log.js",
+              "node_modules/next/dist/esm/server/render-result.js",
+              "node_modules/next/dist/esm/server/base-http/node.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/get-next-pathname-info.js",
+              "node_modules/next/dist/esm/server/api-utils/get-cookie-parser.js",
+              "node_modules/next/dist/esm/shared/lib/page-path/ensure-leading-slash.js",
+              "node_modules/next/dist/esm/server/web/next-url.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/format-next-pathname-info.js",
+              "node_modules/next/dist/esm/server/web/spec-extension/request.js",
+              "node_modules/next/dist/esm/server/api-utils/index.js",
+              "node_modules/next/dist/esm/server/response-cache/utils.js",
+              "node_modules/next/dist/esm/server/web/spec-extension/adapters/next-request.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/parse-path.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/add-path-prefix.js",
+              "node_modules/next/dist/esm/lib/batcher.js",
+              "node_modules/next/dist/esm/server/response-cache/index.js",
+              "node_modules/next/dist/esm/server/lib/dedupe-fetch.js",
+              "node_modules/next/dist/esm/server/pipe-readable.js",
+              "node_modules/next/dist/esm/shared/lib/get-hostname.js",
+              "node_modules/next/dist/esm/shared/lib/is-thenable.js",
+              "node_modules/next/dist/esm/lib/detached-promise.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/add-path-suffix.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/add-locale.js",
+              "node_modules/next/dist/esm/server/app-render/manifests-singleton.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/remove-trailing-slash.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/path-has-prefix.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/remove-path-prefix.js",
+              "node_modules/next/dist/esm/server/stream-utils/node-web-streams-helper.js",
+              "node_modules/next/dist/esm/server/web/utils.js",
+              "node_modules/next/dist/esm/server/base-http/helpers.js",
+              "node_modules/next/dist/esm/server/lib/patch-fetch.js",
+              "node_modules/next/dist/esm/shared/lib/router/utils/app-paths.js",
+              "node_modules/next/dist/compiled/@edge-runtime/cookies/index.js",
+              "node_modules/next/dist/compiled/cookie/index.js",
+              "node_modules/next/dist/compiled/@opentelemetry/api/index.js",
+              "node_modules/next/src/server/route-modules/app-page/module.compiled.js",
+              "node_modules/next/src/server/route-modules/app-page/vendored/rsc/react.ts",
+              "turbopack:///[turbopack]/shared/runtime/runtime-utils.ts",
+              "turbopack:///[turbopack]/shared-node/base-externals-utils.ts",
+              "turbopack:///[turbopack]/shared-node/node-externals-utils.ts",
+              "turbopack:///[turbopack]/nodejs/runtime/runtime-base.ts",
+              "turbopack:///[turbopack]/nodejs/runtime/build-base.ts"
+            ]
+          },
+          "treatmentOverlap": {
+            "serverSourceCount": 2,
+            "ssrSourceCount": 2,
+            "sharedPathCount": 2,
+            "identicalContentCount": 2,
+            "sourceOverlapRatio": 1,
+            "contentIdentityRatio": 1,
+            "identicalContentBytes": 402313,
+            "contentByteOverlapRatio": 1,
+            "sharedPaths": [
+              "data/payload.generated.json",
+              "lib/pure-heavy.ts"
+            ]
+          }
+        }
+      }
+    },
+    "webpack": {
+      "runtime": {
+        "passed": true,
+        "route": {
+          "status": 200,
+          "recordCount": 1536,
+          "sentinel": "PUBLIC_CANARY_CONTEXT_SHARING_SENTINEL_v1"
+        },
+        "action": {
+          "status": 303,
+          "responseMode": "http-redirect",
+          "redirectContainsRecordCount": true,
+          "redirectContainsChecksum": true
+        }
+      },
+      "output": {
+        "metric": "sum of level-9 gzip bytes for each .next/server JavaScript file",
+        "total": {
+          "fileCount": 17,
+          "rawBytes": 1074107,
+          "gzipBytes": 355594,
+          "sentinelFileCount": 1
+        },
+        "categories": {
+          "serverChunks": {
+            "fileCount": 3,
+            "rawBytes": 1020204,
+            "gzipBytes": 340962,
+            "sentinelFileCount": 1
+          },
+          "ssrChunks": {
+            "fileCount": 0,
+            "rawBytes": 0,
+            "gzipBytes": 0,
+            "sentinelFileCount": 0
+          },
+          "routeEntries": {
+            "fileCount": 2,
+            "rawBytes": 8531,
+            "gzipBytes": 3865,
+            "sentinelFileCount": 0
+          },
+          "pageEntries": {
+            "fileCount": 6,
+            "rawBytes": 42995,
+            "gzipBytes": 9215,
+            "sentinelFileCount": 0
+          },
+          "serverRuntime": {
+            "fileCount": 6,
+            "rawBytes": 2377,
+            "gzipBytes": 1552,
+            "sentinelFileCount": 0
+          }
+        },
+        "sourceMapFileCount": 0,
+        "sourceEvidence": {
+          "parseFailureCount": 0,
+          "server": {
+            "sourceCount": 0,
+            "contentBytes": 0,
+            "treatmentSources": []
+          },
+          "ssr": {
+            "sourceCount": 0,
+            "contentBytes": 0,
+            "treatmentSources": []
+          },
+          "overallOverlap": {
+            "serverSourceCount": 0,
+            "ssrSourceCount": 0,
+            "sharedPathCount": 0,
+            "identicalContentCount": 0,
+            "sourceOverlapRatio": null,
+            "contentIdentityRatio": null,
+            "identicalContentBytes": 0,
+            "contentByteOverlapRatio": null,
+            "sharedPaths": []
+          },
+          "treatmentOverlap": {
+            "serverSourceCount": 0,
+            "ssrSourceCount": 0,
+            "sharedPathCount": 0,
+            "identicalContentCount": 0,
+            "sourceOverlapRatio": null,
+            "contentIdentityRatio": null,
+            "identicalContentBytes": 0,
+            "contentByteOverlapRatio": null,
+            "sharedPaths": []
+          }
+        }
+      }
+    }
+  }
+}

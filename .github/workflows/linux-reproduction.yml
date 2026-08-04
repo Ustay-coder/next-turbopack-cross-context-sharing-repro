@@ -1,0 +1,57 @@
+name: Linux reproduction
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out reproduction
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.0.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run unit tests
+        run: pnpm test
+
+      - name: Run factorial measurement
+        run: pnpm repro
+
+      - name: Verify both production runtimes
+        run: pnpm verify
+
+      - name: Verify public evidence
+        run: pnpm verify:public
+
+      - name: Upload Linux evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-x64-evidence
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            results/canary.json
+            results/canary.md
+            results/linux-x64.json
+            results/linux-x64.md
+            results/runtime-verification.json
+            results/source-evidence.json

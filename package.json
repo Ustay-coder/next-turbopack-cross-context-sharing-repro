@@ -1,0 +1,32 @@
+{
+  "name": "next-turbopack-cross-context-sharing-repro",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "scripts": {
+    "build:webpack": "next build --webpack",
+    "build:turbopack": "next build --turbopack",
+    "generate:cell": "node scripts/generate-cell.mjs",
+    "repro": "node scripts/run-matrix.mjs --runs 3",
+    "repro:pilot": "node scripts/run-matrix.mjs --runs 1 --resume false",
+    "test": "node --test scripts/test/*.test.mjs",
+    "verify": "node scripts/verify-bundlers.mjs",
+    "verify:current": "node scripts/verify-runtime.mjs",
+    "verify:public": "node scripts/verify-public.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.1-canary.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.30",
+    "@types/react": "19.1.6",
+    "@types/react-dom": "19.1.6",
+    "typescript": "5.8.3"
+  }
+}

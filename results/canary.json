@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-04T14:11:38.920Z",
+  "environment": {
+    "packageManager": "pnpm@9.0.0",
+    "node": "v22.23.2",
+    "pnpm": "9.0.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "next": "16.3.1-canary.0",
+    "nextTag": "v16.3.1-canary.0",
+    "nextCommit": "5005bd083874d366f95fd34da7a5d27837cbd5fa",
+    "react": "19.2.8",
+    "reactDom": "19.2.8",
+    "lockfileSha256": "dab73115535b32823becf38091420132f66d4dc228ee0050355068052b237c32",
+    "nextInfo": "warn  - Failed to fetch latest canary version. (Reason: fetch failed.)\n      Detected \"16.3.1-canary.0\". Visit https://github.com/vercel/next.js/releases.\n      Make sure to try the latest canary version (eg.: `npm install next@canary`) to confirm the issue still exists before creating a new issue.\n      \nLearn more: https://nextjs.org/docs/messages/opening-an-issue\n/bin/sh: yarn: command not found\n\nOperating System:\n  Platform: darwin\n  Arch: arm64\n  Version: Darwin Kernel Version 25.5.0: Tue Jun  9 22:28:29 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T6030\n  Available memory (MB): 18432\n  Available CPU cores: 11\nBinaries:\n  Node: 22.23.2\n  npm: 10.9.8\n  Yarn: N/A\n  pnpm: 9.0.0\nRelevant Packages:\n  next: 16.3.1-canary.0\n  eslint-config-next: N/A\n  react: 19.2.8\n  react-dom: 19.2.8\n  typescript: 5.8.3\nNext.js Config:\n  output: N/A"
+  },
+  "experiment": {
+    "payload": "pure ESM plus deterministic generated JSON",
+    "contexts": [
+      "neither",
+      "route-only",
+      "action-only",
+      "both"
+    ],
+    "bundlers": [
+      "webpack",
+      "turbopack"
+    ],
+    "runs": 3,
+    "routeHandlerCount": 1,
+    "serverActionCount": 1,
+    "primaryBuildServerSourceMaps": false,
+    "sourceEvidenceBuildServerSourceMaps": true
+  },
+  "results": {
+    "webpack": {
+      "runCount": 3,
+      "values": {
+        "neither": 174886,
+        "route-only": 356459,
+        "action-only": 356625,
+        "both": 355592
+      },
+      "factorial": {
+        "baseline": 174886,
+        "routeIncrement": 181573,
+        "actionIncrement": 181739,
+        "bothIncrement": 180706,
+        "secondContextCost": -1033,
+        "interaction": -182606,
+        "duplicationRatio": -0.005689
+      },
+      "stability": {
+        "evaluated": true,
+        "maxRelativeDeviation": 0.000047
+      },
+      "runtimeVerified": true
+    },
+    "turbopack": {
+      "runCount": 3,
+      "values": {
+        "neither": 163685,
+        "route-only": 345184,
+        "action-only": 346889,
+        "both": 528393
+      },
+      "factorial": {
+        "baseline": 163685,
+        "routeIncrement": 181499,
+        "actionIncrement": 183204,
+        "bothIncrement": 364708,
+        "secondContextCost": 181504,
+        "interaction": 5,
+        "duplicationRatio": 1.000028
+      },
+      "stability": {
+        "evaluated": true,
+        "maxRelativeDeviation": 0.000037
+      },
+      "runtimeVerified": true
+    }
+  },
+  "gates": {
+    "turbopackSecondCopy": true,
+    "webpackShares": true,
+    "treatmentSourceOverlap": true,
+    "overallContentByteOverlap": true,
+    "stable": true,
+    "runtimeVerified": true
+  },
+  "decision": "PROCEED_TO_PHASE_3",
+  "sourceEvidence": {
+    "parseFailureCount": 0,
+    "server": {
+      "sourceCount": 87,
+      "contentBytes": 875820,
+      "treatmentSources": [
+        "data/payload.generated.json",
+        "lib/pure-heavy.ts"
+      ]
+    },
+    "ssr": {
+      "sourceCount": 294,
+      "contentBytes": 2287712,
+      "treatmentSources": [
+        "data/payload.generated.json",
+        "lib/pure-heavy.ts"
+      ]
+    },
+    "overallOverlap": {
+      "serverSourceCount": 87,
+      "ssrSourceCount": 294,
+      "sharedPathCount": 76,
+      "identicalContentCount": 76,
+      "sourceOverlapRatio": 0.8735632183908046,
+      "contentIdentityRatio": 1,
+      "identicalContentBytes": 837538,
+      "contentByteOverlapRatio": 0.9562901052727729,
+      "sharedPaths": [
+        "data/payload.generated.json",
+        "lib/light.ts",
+        "lib/pure-heavy.ts",
+        "node_modules/next/dist/esm/server/lib/trace/span-store.js",
+        "node_modules/next/dist/esm/shared/lib/utils/reflect-utils.js",
+        "node_modules/next/dist/esm/server/app-render/async-local-storage.js",
+        "node_modules/next/dist/esm/server/app-render/dynamic-rendering.js",
+        "node_modules/next/dist/esm/client/components/hooks-server-context.js",
+        "node_modules/next/dist/esm/client/components/static-generation-bailout.js",
+        "node_modules/next/dist/esm/server/lib/clone-response.js",
+        "node_modules/next/dist/esm/server/lib/lru-cache.js",
+        "node_modules/next/dist/esm/lib/picocolors.js",
+        "node_modules/next/dist/esm/shared/lib/i18n/normalize-locale-path.js",
+        "node_modules/next/dist/esm/server/web/spec-extension/cookies.js",
+        "node_modules/next/dist/esm/server/client-component-renderer-logger.js",
+        "node_modules/next/dist/esm/server/lib/encode-cache-tag.js",
+        "node_modules/next/dist/esm/shared/lib/request-insights.js",
+        "node_modules/next/dist/esm/shared/lib/i18n/detect-domain-locale.js",
+        "node_modules/next/dist/esm/server/web/error.js",
+        "node_modules/next/dist/esm/shared/lib/promise-with-resolvers.js",
+        "node_modules/next/dist/esm/lib/framework/boundary-constants.js",
+        "node_modules/next/dist/esm/server/app-render/instant-validation/boundary-constants.js",
+        "node_modules/next/dist/esm/shared/lib/segment.js",
+        "node_modules/next/dist/esm/shared/lib/server-reference-info.js",
+        "node_modules/next/dist/esm/lib/constants.js",
+        "node_modules/next/dist/esm/client/components/redirect-status-code.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/cache-busting-search-param.js",
+        "node_modules/next/dist/esm/server/lib/trace/request-insights-identity.js",
+        "node_modules/next/dist/esm/server/lib/cache-control.js",
+        "node_modules/next/dist/esm/server/lib/trace/tracer.js",
+        "node_modules/next/dist/esm/server/dynamic-rendering-utils.js",
+        "node_modules/next/dist/esm/server/lib/trace/request-insights.js",
+        "node_modules/next/dist/esm/server/app-render/staged-rendering.js",
+        "node_modules/next/dist/esm/server/base-http/index.js",
+        "node_modules/next/dist/esm/build/output/log.js",
+        "node_modules/next/dist/esm/server/render-result.js",
+        "node_modules/next/dist/esm/server/base-http/node.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/get-next-pathname-info.js",
+        "node_modules/next/dist/esm/server/api-utils/get-cookie-parser.js",
+        "node_modules/next/dist/esm/shared/lib/page-path/ensure-leading-slash.js",
+        "node_modules/next/dist/esm/server/web/next-url.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/format-next-pathname-info.js",
+        "node_modules/next/dist/esm/server/web/spec-extension/request.js",
+        "node_modules/next/dist/esm/server/api-utils/index.js",
+        "node_modules/next/dist/esm/server/response-cache/utils.js",
+        "node_modules/next/dist/esm/server/web/spec-extension/adapters/next-request.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/parse-path.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/add-path-prefix.js",
+        "node_modules/next/dist/esm/lib/batcher.js",
+        "node_modules/next/dist/esm/server/response-cache/index.js",
+        "node_modules/next/dist/esm/server/lib/dedupe-fetch.js",
+        "node_modules/next/dist/esm/server/pipe-readable.js",
+        "node_modules/next/dist/esm/shared/lib/get-hostname.js",
+        "node_modules/next/dist/esm/shared/lib/is-thenable.js",
+        "node_modules/next/dist/esm/lib/detached-promise.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/add-path-suffix.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/add-locale.js",
+        "node_modules/next/dist/esm/server/app-render/manifests-singleton.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/remove-trailing-slash.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/path-has-prefix.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/remove-path-prefix.js",
+        "node_modules/next/dist/esm/server/stream-utils/node-web-streams-helper.js",
+        "node_modules/next/dist/esm/server/web/utils.js",
+        "node_modules/next/dist/esm/server/base-http/helpers.js",
+        "node_modules/next/dist/esm/server/lib/patch-fetch.js",
+        "node_modules/next/dist/esm/shared/lib/router/utils/app-paths.js",
+        "node_modules/next/dist/compiled/@edge-runtime/cookies/index.js",
+        "node_modules/next/dist/compiled/cookie/index.js",
+        "node_modules/next/dist/compiled/@opentelemetry/api/index.js",
+        "node_modules/next/src/server/route-modules/app-page/module.compiled.js",
+        "node_modules/next/src/server/route-modules/app-page/vendored/rsc/react.ts",
+        "turbopack:///[turbopack]/shared/runtime/runtime-utils.ts",
+        "turbopack:///[turbopack]/shared-node/base-externals-utils.ts",
+        "turbopack:///[turbopack]/shared-node/node-externals-utils.ts",
+        "turbopack:///[turbopack]/nodejs/runtime/runtime-base.ts",
+        "turbopack:///[turbopack]/nodejs/runtime/build-base.ts"
+      ]
+    },
+    "treatmentOverlap": {
+      "serverSourceCount": 2,
+      "ssrSourceCount": 2,
+      "sharedPathCount": 2,
+      "identicalContentCount": 2,
+      "sourceOverlapRatio": 1,
+      "contentIdentityRatio": 1,
+      "identicalContentBytes": 402313,
+      "contentByteOverlapRatio": 1,
+      "sharedPaths": [
+        "data/payload.generated.json",
+        "lib/pure-heavy.ts"
+      ]
+    }
+  }
+}

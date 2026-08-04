@@ -1,0 +1,7 @@
+node_modules/
+.next/
+.repro-work/
+data/payload.generated.json
+results/runs/
+results/logs/
+*.tsbuildinfo
