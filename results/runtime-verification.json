@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T14:10:33.663Z",
+  "generatedAt": "2026-08-04T14:27:51.623Z",
   "results": {
     "turbopack": {
       "runtime": {
@@ -21,7 +21,7 @@
         "total": {
           "fileCount": 36,
           "rawBytes": 1364994,
-          "gzipBytes": 528395,
+          "gzipBytes": 528392,
           "sentinelFileCount": 2
         },
         "categories": {
@@ -34,7 +34,7 @@
           "ssrChunks": {
             "fileCount": 20,
             "rawBytes": 822494,
-            "gzipBytes": 305564,
+            "gzipBytes": 305562,
             "sentinelFileCount": 1
           },
           "routeEntries": {
@@ -52,7 +52,7 @@
           "serverRuntime": {
             "fileCount": 4,
             "rawBytes": 1274,
-            "gzipBytes": 810,
+            "gzipBytes": 809,
             "sentinelFileCount": 0
           }
         },
@@ -199,15 +199,15 @@
         "metric": "sum of level-9 gzip bytes for each .next/server JavaScript file",
         "total": {
           "fileCount": 17,
-          "rawBytes": 1074107,
-          "gzipBytes": 355594,
+          "rawBytes": 1076337,
+          "gzipBytes": 355126,
           "sentinelFileCount": 1
         },
         "categories": {
           "serverChunks": {
             "fileCount": 3,
-            "rawBytes": 1020204,
-            "gzipBytes": 340962,
+            "rawBytes": 1020452,
+            "gzipBytes": 340756,
             "sentinelFileCount": 1
           },
           "ssrChunks": {
@@ -218,20 +218,20 @@
           },
           "routeEntries": {
             "fileCount": 2,
-            "rawBytes": 8531,
-            "gzipBytes": 3865,
+            "rawBytes": 8591,
+            "gzipBytes": 3771,
             "sentinelFileCount": 0
           },
           "pageEntries": {
             "fileCount": 6,
-            "rawBytes": 42995,
-            "gzipBytes": 9215,
+            "rawBytes": 44917,
+            "gzipBytes": 9050,
             "sentinelFileCount": 0
           },
           "serverRuntime": {
             "fileCount": 6,
             "rawBytes": 2377,
-            "gzipBytes": 1552,
+            "gzipBytes": 1549,
             "sentinelFileCount": 0
           }
         },

@@ -4,22 +4,22 @@
     "packageManager": "pnpm@9.0.0",
     "node": "v22.23.2",
     "pnpm": "9.0.0",
-    "platform": "darwin",
-    "arch": "arm64",
+    "platform": "linux",
+    "arch": "x64",
     "next": "16.3.1-canary.0",
     "nextTag": "v16.3.1-canary.0",
     "nextCommit": "5005bd083874d366f95fd34da7a5d27837cbd5fa",
     "react": "19.2.8",
     "reactDom": "19.2.8",
     "lockfileSha256": "dab73115535b32823becf38091420132f66d4dc228ee0050355068052b237c32",
-    "nextInfo": "/bin/sh: yarn: command not found\n\nOperating System:\n  Platform: darwin\n  Arch: arm64\n  Version: Darwin Kernel Version 25.5.0: Tue Jun  9 22:28:29 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T6030\n  Available memory (MB): 18432\n  Available CPU cores: 11\nBinaries:\n  Node: 22.23.2\n  npm: 10.9.8\n  Yarn: N/A\n  pnpm: 9.0.0\nRelevant Packages:\n  next: 16.3.1-canary.0 // Latest available version is detected (16.3.1-canary.0).\n  eslint-config-next: N/A\n  react: 19.2.8\n  react-dom: 19.2.8\n  typescript: 5.8.3\nNext.js Config:\n  output: N/A"
+    "nextInfo": "Operating System:\n  Platform: linux\n  Arch: x64\n  Version: #20~24.04.1-Ubuntu SMP Fri Jun 19 20:09:14 UTC 2026\n  Available memory (MB): 15990\n  Available CPU cores: 4\nBinaries:\n  Node: 22.23.2\n  npm: 10.9.8\n  Yarn: 1.22.22\n  pnpm: 9.0.0\nRelevant Packages:\n  next: 16.3.1-canary.0 // Latest available version is detected (16.3.1-canary.0).\n  eslint-config-next: N/A\n  react: 19.2.8\n  react-dom: 19.2.8\n  typescript: 5.8.3\nNext.js Config:\n  output: N/A"
   },
   "output": {
     "metric": "sum of level-9 gzip bytes for each .next/server JavaScript file",
     "total": {
       "fileCount": 36,
       "rawBytes": 1364994,
-      "gzipBytes": 528391,
+      "gzipBytes": 528392,
       "sentinelFileCount": 2
     },
     "categories": {
@@ -32,7 +32,7 @@
       "ssrChunks": {
         "fileCount": 20,
         "rawBytes": 822494,
-        "gzipBytes": 305561,
+        "gzipBytes": 305562,
         "sentinelFileCount": 1
       },
       "routeEntries": {

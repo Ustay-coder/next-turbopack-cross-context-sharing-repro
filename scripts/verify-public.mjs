@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, readdir } from "node:fs/promises";
 import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { sameEnvironment } from "./lib/environment.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const excluded = [
@@ -40,6 +41,9 @@ const platformResultPath = resolve(
   `results/${result.environment.platform}-${result.environment.arch}.json`,
 );
 const platformResult = JSON.parse(await readFile(platformResultPath, "utf8"));
+const sourceEvidence = JSON.parse(
+  await readFile(resolve(root, "results/source-evidence.json"), "utf8"),
+);
 const lockfile = await readFile(resolve(root, "pnpm-lock.yaml"));
 const directDependencies = Object.keys(packageJson.dependencies).sort();
 if (JSON.stringify(directDependencies) !== JSON.stringify(["next", "react", "react-dom"])) {
@@ -56,6 +60,9 @@ if (result.environment.lockfileSha256 !== sha256(lockfile)) {
 }
 if (JSON.stringify(platformResult) !== JSON.stringify(result)) {
   throw new Error("The platform-specific result does not match the current canary evidence");
+}
+if (!sameEnvironment(sourceEvidence.environment, result.environment)) {
+  throw new Error("The source-map evidence does not match the current measurement environment");
 }
 
 const failures = [];

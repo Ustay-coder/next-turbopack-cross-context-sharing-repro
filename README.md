@@ -13,23 +13,25 @@ No OpenNext adapter, Cloudflare tooling, auth library, database, environment var
 
 ## Current canary result
 
-Measured on 2026-08-04 with:
+The primary result was measured on a GitHub-hosted Ubuntu 24.04 x64 runner on 2026-08-04 with:
 
 - Next.js `16.3.1-canary.0`
 - upstream tag commit `5005bd083874d366f95fd34da7a5d27837cbd5fa`
 - React / React DOM `19.2.8`
 - Node `22.23.2`
 - pnpm `9.0.0`
-- macOS arm64
+- Ubuntu 24.04 x64
 
 Primary metric: the sum of level-9 gzip bytes for every JavaScript file under `.next/server`. Values are three-run means.
 
 | Bundler | Baseline | Route increment | Action increment | Both increment | Second-context cost | Duplication ratio | Max deviation |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Turbopack | 163,685 B | 181,499 B | 183,204 B | 364,708 B | **181,504 B** | **1.000028** | 0.0037% |
-| Webpack | 174,886 B | 181,573 B | 181,739 B | 180,706 B | **-1,033 B** | **-0.005689** | 0.0047% |
+| Turbopack | 163,685 B | 181,505 B | 183,202 B | 364,706 B | **181,504 B** | **0.999994** | 0.0014% |
+| Webpack | 174,426 B | 181,574 B | 181,745 B | 180,702 B | **-1,043 B** | **-0.005744** | 0.0008% |
 
 The negative Webpack value is small build/compression variation around zero. Turbopack's `both` output contains the sentinel in two emitted files; Webpack contains it in one.
+
+The same matrix was also measured on macOS arm64. Turbopack's second-context cost was exactly `181,504 B` on both platforms, with duplication ratios of `0.999994` on Linux and `1.000028` on macOS. Webpack remained near zero at `-1,043 B` on Linux and `-1,033 B` on macOS.
 
 The 24 primary builds use the default Next.js configuration without enabling `experimental.serverSourceMaps`. Source identity is collected in one separate Turbopack `both` diagnostic build with that option enabled, so the diagnostic option does not affect the primary size matrix.
 
@@ -44,7 +46,12 @@ Source-map evidence from that diagnostic build:
 
 Both the Route Handler and Server Action were executed successfully after production builds with each bundler.
 
-Full results are in [`results/darwin-arm64.md`](results/darwin-arm64.md) and [`results/darwin-arm64.json`](results/darwin-arm64.json). The `results/canary.*` files always point to the most recently executed platform result.
+Full platform results are in:
+
+- [`results/linux-x64.md`](results/linux-x64.md) and [`results/linux-x64.json`](results/linux-x64.json)
+- [`results/darwin-arm64.md`](results/darwin-arm64.md) and [`results/darwin-arm64.json`](results/darwin-arm64.json)
+
+The `results/canary.*` files point to the primary Linux result committed in this repository.
 
 ## Reproduce
 
