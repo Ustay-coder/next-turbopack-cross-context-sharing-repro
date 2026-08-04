@@ -14,15 +14,15 @@ jobs:
 
     steps:
       - name: Check out reproduction
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: 9.0.0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
           cache: pnpm
@@ -43,7 +43,7 @@ jobs:
         run: pnpm verify:public
 
       - name: Upload Linux evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: linux-x64-evidence
           if-no-files-found: error

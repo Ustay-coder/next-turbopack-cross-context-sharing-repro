@@ -5,6 +5,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { analyzeOutput } from "./analyze-output.mjs";
 import { generateCell } from "./generate-cell.mjs";
+import { sameEnvironment } from "./lib/environment.mjs";
 import { CONTEXTS, summarizeMatrix } from "./lib/metrics.mjs";
 import { verifyRuntime } from "./verify-runtime.mjs";
 
@@ -151,7 +152,7 @@ async function diagnosticSourceEvidence(environment) {
   const path = resolve(root, "results/source-evidence.json");
   try {
     const existing = JSON.parse(await readFile(path, "utf8"));
-    if (existing.environment.lockfileSha256 === environment.lockfileSha256) return existing.output;
+    if (sameEnvironment(existing.environment, environment)) return existing.output;
   } catch (error) {
     if (error?.code !== "ENOENT" && !(error instanceof SyntaxError)) throw error;
   }
@@ -196,7 +197,7 @@ for (let run = 1; run <= runs; run += 1) {
     if (resume) {
       try {
         const existing = JSON.parse(await readFile(resultPath, "utf8"));
-        if (existing.environment.lockfileSha256 === environment.lockfileSha256) {
+        if (sameEnvironment(existing.environment, environment)) {
           console.log(`CELL_RESUME ${id}`);
           cells.push(existing);
           continue;
